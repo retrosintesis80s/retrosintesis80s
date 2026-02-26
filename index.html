@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -40,8 +39,19 @@
             50% { transform: scale(1.05); text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; }
         }
 
+        .frase-manifiesto {
+            font-size: 1.1rem;
+            color: #fff;
+            max-width: 600px;
+            margin: 0 auto 20px auto;
+            font-style: italic;
+            line-height: 1.5;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         .user-tag { 
-            font-size: 1.1rem; color: #00ffff; border: 1px solid #00ffff; 
+            font-size: 1rem; color: #00ffff; border: 1px solid #00ffff; 
             display: inline-block; padding: 5px 15px; margin-bottom: 20px; 
             background: rgba(0,0,0,0.8); box-shadow: 0 0 10px #00ffff;
         }
@@ -79,10 +89,7 @@
             background: #000; border-top: 2px solid #fff;
         }
 
-        /* Estilos de Botones */
-        .contenedor-botones {
-            margin: 40px 0 60px 0;
-        }
+        .contenedor-botones { margin: 40px 0 60px 0; }
 
         .btn-redes { 
             display: inline-block; 
@@ -98,31 +105,25 @@
             font-size: 0.9rem;
         }
 
-        .btn-instagram { 
-            background: #ff00ff; 
-            box-shadow: 0 0 15px #ff00ff; 
-        }
+        .btn-instagram { background: #ff00ff; box-shadow: 0 0 15px #ff00ff; }
+        .btn-tiktok { background: #000; border: 2px solid #00ffff; box-shadow: 0 0 15px #00ffff; color: #00ffff; }
 
-        .btn-tiktok { 
-            background: #000; 
-            border: 2px solid #00ffff;
-            box-shadow: 0 0 15px #00ffff; 
-            color: #00ffff;
-        }
-
-        .btn-redes:hover {
-            transform: translateY(-5px);
-            filter: brightness(1.2);
-        }
+        .btn-redes:hover { transform: translateY(-5px); filter: brightness(1.2); }
     </style>
 </head>
 <body>
 
     <h1>RETROSÍNTESIS 80s</h1>
+    
+    <div class="frase-manifiesto">
+        ⚡️ El pulso eléctrico de una generación <br> 
+        📼 Canciones de una época que no fue moda, fue identidad
+    </div>
+
     <div class="user-tag">@retrosintesis80s</div>
 
     <div class="spotify-container">
-        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1XW96S8S899A1C5W7D9F88" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DWT37v6y3nO2S?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
 
     <div class="galeria-discos">
@@ -130,17 +131,14 @@
             <img src="Charly.jpg" alt="Charly Garcia">
             <div class="disco-info">CHARLY GARCÍA - CLICS MODERNOS</div>
         </div>
-
         <div class="disco">
             <img src="Sumo.png" alt="Sumo">
             <div class="disco-info">SUMO - LLEGANDO LOS MONOS</div>
         </div>
-
         <div class="disco">
             <img src="abuelos.jpg" alt="Los Abuelos de la Nada">
             <div class="disco-info">LOS ABUELOS - HIMNO DE MI CORAZÓN</div>
         </div>
-
         <div class="disco">
             <img src="spinetta.jpg" alt="Luis Alberto Spinetta">
             <div class="disco-info">SPINETTA JADE - BAJO BELGRANO</div>
@@ -148,14 +146,12 @@
     </div>
 
     <div class="contenedor-botones">
-        <a href="https://www.instagram.com/retrosintesis80s/" target="_blank" class="btn-redes btn-instagram">
-            Instagram
-        </a>
-        <a href="https://www.tiktok.com/@retrosintesis80s" target="_blank" class="btn-redes btn-tiktok">
-            TikTok
-        </a>
+        <a href="https://www.instagram.com/retrosintesis80s/" target="_blank" class="btn-redes btn-instagram">Instagram</a>
+        <a href="https://www.tiktok.com/@retrosintesis80s" target="_blank" class="btn-redes btn-tiktok">TikTok</a>
     </div>
 
 </body>
 </html>
+
+
 
