@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retrosintesis80s | Rock Argentino</title>
+    <style>
+        :root {
+            --neon-pink: #ff00ff;
+            --neon-blue: #00ffff;
+            --dark-bg: #0d0216;
+            --card-bg: #1a0b2e;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            background-color: var(--dark-bg);
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(180deg, rgba(13,2,22,0.85) 0%, rgba(26,11,46,0.6) 100%),
+                        url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 4px solid var(--neon-pink);
+            box-shadow: 0 0 20px var(--neon-pink);
+        }
+
+        h1 { 
+            font-size: clamp(2rem, 8vw, 4.5rem); 
+            margin: 0; 
+            color: var(--neon-blue); 
+            text-shadow: 3px 3px var(--neon-pink);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .tagline { 
+            font-size: clamp(0.9rem, 3vw, 1.2rem);
+            color: #fff; 
+            background: rgba(255, 0, 255, 0.2);
+            padding: 10px 20px;
+            margin-top: 15px;
+            border: 1px solid var(--neon-pink);
+        }
+
+        .container { 
+            padding: 30px 5%; 
+            max-width: 1200px; 
+            margin: auto; 
+        }
+
+        .section-title {
+            border-left: 6px solid var(--neon-blue);
+            padding-left: 15px;
+            margin: 40px 0 25px 0;
+            color: var(--neon-pink);
+            font-size: 1.8rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .disco-card {
+            background: var(--card-bg);
+            border: 1px solid #331a4d;
+            padding: 20px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .disco-card:hover {
+            border-color: var(--neon-blue);
+            transform: translateY(-5px);
+        }
+
+        .disco-card h3 { color: var(--neon-blue); margin-top: 0; font-size: 1.4rem; }
+
+        .playlist {
+            background: #000;
+            padding: 25px;
+            border: 1px dashed var(--neon-pink);
+            margin-top: 50px;
+            border-radius: 5px;
+        }
+
+        .playlist h2 { color: var(--neon-pink); margin-top: 0; }
+        
+        ol { padding-left: 25px; }
+        li { margin-bottom: 12px; color: #bbb; font-size: 1.1rem; }
+        li span { color: var(--neon-blue); font-weight: bold; display: block; }
+
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            font-size: 0.8rem;
+            border-top: 1px solid #222;
+            margin-top: 60px;
+            color: #666;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 20px; }
+            .section-title { font-size: 1.5rem; }
+            header { min-height: 50vh; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>RETROSINTESIS80S</h1>
+    <div class="tagline">EL PULSO DE UNA GENERACIÓN / ARGENTINA '80</div>
+</header>
+
+<div class="container">
+    <h2 class="section-title">DISCOS FUNDAMENTALES</h2>
+    <div class="grid">
+        <div class="disco-card">
+            <h3>Clics Modernos</h3>
+            <p><strong>Charly García (1983)</strong><br>El disco que trajo la modernidad. Instrumentos electrónicos y letras filosas que definieron el nuevo sonido.</p>
+        </div>
+        <div class="disco-card">
+            <h3>Nada Personal</h3>
+            <p><strong>Soda Stereo (1985)</strong><br>La explosión de la Sodamanía. Estética post-punk y estribillos que conquistaron el continente.</p>
+        </div>
+        <div class="disco-card">
+            <h3>Superficies de Placer</h3>
+            <p><strong>Virus (1987)</strong><br>La cima del pop sofisticado argentino. Sintetizadores elegantes y letras de Federico Moura.</p>
+        </div>
+    </div>
+
+    <div class="playlist">
+        <h2>LADO A: SELECCIÓN ESPECIAL</h2>
+        <ol>
+            <li><span>Imágenes Paganas</span> Virus</li>
+            <li><span>Amanecer en la ruta</span> Suéter</li>
+            <li><span>Persiana Americana</span> Soda Stereo</li>
+            <li><span>Mil Horas</span> Los Abuelos de la Nada</li>
+            <li><span>Yo no quiero volverme tan loco</span> Charly García</li>
+        </ol>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 RETROSINTESIS80S <br> OPTIMIZADO PARA PC Y MÓVIL
+</footer>
+
+</body>
+</html>
