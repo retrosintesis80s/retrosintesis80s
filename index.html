@@ -1,16 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>@retrosintesis80s | Rock & Pop</title>
+    <title>@retrosintesis80s | Archivo Rock Nacional</title>
     <style>
         body {
             background-color: #050505;
             color: #00ffff;
             font-family: 'Courier New', Courier, monospace;
             text-align: center;
-            /* Fondo de cuadrícula retro */
-            background-image: linear-gradient(0deg, transparent 24%, rgba(255, 0, 255, .1) 25%, rgba(255, 0, 255, .1) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, .1) 75%, rgba(255, 0, 255, .1) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 0, 255, .1) 25%, rgba(255, 0, 255, .1) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, .1) 75%, rgba(255, 0, 255, .1) 76%, transparent 77%, transparent);
+            background-image: linear-gradient(0deg, transparent 24%, rgba(255, 0, 255, .05) 25%, rgba(255, 0, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, .05) 75%, rgba(255, 0, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 0, 255, .05) 25%, rgba(255, 0, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, .05) 75%, rgba(255, 0, 255, .05) 76%, transparent 77%, transparent);
             background-size: 50px 50px;
             margin: 0;
             padding: 20px;
@@ -20,27 +20,52 @@
             font-size: 3.5rem;
             color: #fff;
             text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         .user-tag {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             color: #00ffff;
-            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #00ffff;
             display: inline-block;
             padding: 5px 15px;
-            border: 2px solid #00ffff;
-            box-shadow: 0 0 10px #00ffff;
             margin-bottom: 20px;
+            box-shadow: 0 0 10px #00ffff;
         }
 
-        .marquesina {
-            background: #00ffff;
-            color: #000;
-            font-weight: bold;
+        .galeria-discos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .disco {
+            border: 4px solid #fff;
+            box-shadow: 0 0 15px rgba(255,255,255,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: #111;
+        }
+
+        .disco:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 0 20px #ff00ff;
+            border-color: #ff00ff;
+        }
+
+        .disco img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .disco-info {
             padding: 10px;
-            margin: 20px 0;
-            text-transform: uppercase;
+            font-size: 0.8rem;
+            background: rgba(0,0,0,0.8);
+            color: #fff;
         }
 
         .btn-instagram {
@@ -50,24 +75,9 @@
             padding: 15px 30px;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 5px;
             box-shadow: 0 0 15px #ff00ff;
-            transition: 0.3s;
-            margin-top: 20px;
-            text-transform: uppercase;
-        }
-
-        .btn-instagram:hover {
-            box-shadow: 0 0 30px #ff00ff;
-            transform: scale(1.1);
-        }
-
-        .video-container {
             margin-top: 30px;
-            border: 5px solid #ff00ff;
-            display: inline-block;
-            line-height: 0;
-            box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+            text-transform: uppercase;
         }
     </style>
 </head>
@@ -75,14 +85,33 @@
 
     <h1>RETROSÍNTESIS 80s</h1>
     <div class="user-tag">@retrosintesis80s</div>
-    
-    <marquee class="marquesina"> ⚡ EL ARCHIVO DIGITAL DEL ROCK NACIONAL ⚡ SODA STEREO ⚡ CHARLY GARCIA ⚡ VIRUS ⚡ LOS ABUELOS DE LA NADA ⚡ SUMO ⚡ </marquee>
 
-    <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/EPrUuN2Yp0s?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <div class="galeria-discos">
+        <div class="disco">
+            <img src="https://upload.wikimedia.org/wikipedia/en/b/b3/NadaPersonal.jpg" alt="Soda Stereo - Nada Personal">
+            <div class="disco-info">SODA STEREO - NADA PERSONAL (1985)</div>
+        </div>
+        <div class="disco">
+            <img src="https://upload.wikimedia.org/wikipedia/en/f/f6/Clics_modernos.jpg" alt="Charly Garcia - Clics Modernos">
+            <div class="disco-info">CHARLY GARCIA - CLICS MODERNOS (1983)</div>
+        </div>
+        <div class="disco">
+            <img src="https://upload.wikimedia.org/wikipedia/es/4/41/Superficies_de_placer.jpg" alt="Virus - Superficies de Placer">
+            <div class="disco-info">VIRUS - SUPERFICIES DE PLACER (1987)</div>
+        </div>
+        <div class="disco">
+            <img src="https://upload.wikimedia.org/wikipedia/es/1/1b/Llegando_los_monos.jpg" alt="Sumo - Llegando los Monos">
+            <div class="disco-info">SUMO - LLEGANDO LOS MONOS (1986)</div>
+        </div>
+        <div class="disco">
+            <img src="https://upload.wikimedia.org/wikipedia/es/a/a9/Bajo_Belgrano.jpg" alt="Spinetta Jade - Bajo Belgrano">
+            <div class="disco-info">SPINETTA JADE - BAJO BELGRANO (1983)</div>
+        </div>
+        <div class="disco">
+            <img src="https://upload.wikimedia.org/wikipedia/es/d/d4/Himno_de_mi_coraz%C3%B3n.jpg" alt="Los Abuelos de la Nada">
+            <div class="disco-info">ABUELOS DE LA NADA - HIMNO (1984)</div>
+        </div>
     </div>
-
-    <br>
 
     <a href="https://www.instagram.com/retrosintesis80s/" target="_blank" class="btn-instagram">
         Seguinos en Instagram
