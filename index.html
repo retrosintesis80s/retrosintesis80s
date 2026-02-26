@@ -3,9 +3,10 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@retrosintesis80s | Archivo Rock Nacional</title>
     <style>
-       body {
+        body {
             background-color: #050505;
             color: #00ffff;
             font-family: 'Courier New', Courier, monospace;
@@ -14,7 +15,7 @@
             padding: 20px;
             overflow-x: hidden;
             
-            /* Efecto de cuadrícula en movimiento */
+            /* Cuadrícula en movimiento */
             background-image: 
                 linear-gradient(0deg, transparent 24%, rgba(255, 0, 255, .15) 25%, rgba(255, 0, 255, .15) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, .15) 75%, rgba(255, 0, 255, .15) 76%, transparent 77%, transparent), 
                 linear-gradient(90deg, transparent 24%, rgba(255, 0, 255, .15) 25%, rgba(255, 0, 255, .15) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, .15) 75%, rgba(255, 0, 255, .15) 76%, transparent 77%, transparent);
@@ -22,101 +23,109 @@
             animation: moveGrid 4s linear infinite;
         }
 
-        /* Animación para que el fondo se mueva */
         @keyframes moveGrid {
             from { background-position: 0 0; }
             to { background-position: 0 60px; }
         }
 
         h1 { 
-            font-size: 3.5rem; 
+            font-size: 3rem; 
             color: #fff; 
             text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff; 
             animation: pulse 2s ease-in-out infinite;
+            margin-top: 40px;
         }
 
         @keyframes pulse {
-            0%, 100% { transform: scale(1); }
+            0%, 100% { transform: scale(1); text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; }
             50% { transform: scale(1.05); text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; }
         }
-           
 
-        h1 {
-            font-size: 3.5rem;
-            color: #fff;
-            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
-            margin-bottom: 5px;
-        }
-
-        .user-tag {
-            font-size: 1.2rem;
-            color: #00ffff;
-            border: 1px solid #00ffff;
-            display: inline-block;
-            padding: 5px 15px;
-            margin-bottom: 20px;
+        .user-tag { 
+            font-size: 1.2rem; 
+            color: #00ffff; 
+            border: 1px solid #00ffff; 
+            display: inline-block; 
+            padding: 5px 15px; 
+            margin-bottom: 30px; 
+            background: rgba(0,0,0,0.8);
             box-shadow: 0 0 10px #00ffff;
         }
 
-        .galeria-discos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
-            margin: 30px auto;
+        .galeria-discos { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 30px; 
+            max-width: 1100px; 
+            margin: 40px auto; 
             padding: 20px;
         }
 
-        .disco {
-            border: 4px solid #fff;
-            box-shadow: 0 0 15px rgba(255,255,255,0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
-            background: #111;
+        .disco { 
+            border: 4px solid #fff; 
+            transition: 0.4s; 
+            background: #111; 
+            position: relative;
+            overflow: hidden;
         }
 
-        .disco:hover {
-            transform: scale(1.05) rotate(2deg);
+        .disco:hover { 
+            transform: scale(1.08) rotate(2deg); 
+            border-color: #ff00ff; 
+            box-shadow: 0 0 25px #ff00ff; 
+            z-index: 10; 
+        }
+
+        .disco img { 
+            width: 100%; 
+            height: auto; 
+            display: block; 
+            filter: contrast(1.1);
+        }
+
+        .disco-info { 
+            padding: 12px; 
+            font-size: 0.9rem; 
+            color: #fff; 
+            background: #000;
+            border-top: 2px solid #fff;
+        }
+
+        .btn-instagram { 
+            display: inline-block; 
+            background: #ff00ff; 
+            color: white; 
+            padding: 15px 40px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            margin: 50px 0; 
             box-shadow: 0 0 20px #ff00ff;
-            border-color: #ff00ff;
-        }
-
-        .disco img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .disco-info {
-            padding: 10px;
-            font-size: 0.8rem;
-            background: rgba(0,0,0,0.8);
-            color: #fff;
-        }
-
-        .btn-instagram {
-            display: inline-block;
-            background: #ff00ff;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 0 15px #ff00ff;
-            margin-top: 30px;
             text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .btn-instagram:hover {
+            background: #00ffff;
+            box-shadow: 0 0 20px #00ffff;
+            color: #000;
         }
     </style>
 </head>
 <body>
 
-   <div class="galeria-discos">
+    <h1>RETROSÍNTESIS 80s</h1>
+    <div class="user-tag">@retrosintesis80s</div>
+
+    <div class="galeria-discos">
         <div class="disco">
             <img src="Charly.jpg" alt="Charly Garcia">
             <div class="disco-info">CHARLY GARCIA - CLICS MODERNOS</div>
         </div>
 
         <div class="disco">
-            <img src="Virus.jpg" alt="Virus">
-            <div class="disco-info">VIRUS - SUPERFICIES DE PLACER</div>
+            <img src="Refresco.jpg" alt="Soda Stereo">
+            <div class="disco-info">SODA STEREO - NADA PERSONAL</div>
         </div>
 
         <div class="disco">
@@ -126,7 +135,7 @@
 
         <div class="disco">
             <img src="abuelos.jpg" alt="Los Abuelos de la Nada">
-            <div class="disco-info">LOS ABUELOS DE LA NADA - HIMNO</div>
+            <div class="disco-info">LOS ABUELOS - HIMNO DE MI CORAZÓN</div>
         </div>
 
         <div class="disco">
@@ -141,7 +150,6 @@
 
 </body>
 </html>
-
 
 
 
