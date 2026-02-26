@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,8 +16,7 @@
             margin: 0;
             padding: 20px;
             overflow-x: hidden;
-            
-            /* Cuadrícula en movimiento */
+            /* Cuadrícula animada */
             background-image: 
                 linear-gradient(0deg, transparent 24%, rgba(255, 0, 255, .15) 25%, rgba(255, 0, 255, .15) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, .15) 75%, rgba(255, 0, 255, .15) 76%, transparent 77%, transparent), 
                 linear-gradient(90deg, transparent 24%, rgba(255, 0, 255, .15) 25%, rgba(255, 0, 255, .15) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, .15) 75%, rgba(255, 0, 255, .15) 76%, transparent 77%, transparent);
@@ -31,9 +32,8 @@
         h1 { 
             font-size: 3rem; 
             color: #fff; 
-            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff; 
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; 
             animation: pulse 2s ease-in-out infinite;
-            margin-top: 40px;
         }
 
         @keyframes pulse {
@@ -42,73 +42,38 @@
         }
 
         .user-tag { 
-            font-size: 1.2rem; 
-            color: #00ffff; 
-            border: 1px solid #00ffff; 
-            display: inline-block; 
-            padding: 5px 15px; 
-            margin-bottom: 30px; 
-            background: rgba(0,0,0,0.8);
-            box-shadow: 0 0 10px #00ffff;
+            font-size: 1.2rem; color: #00ffff; border: 1px solid #00ffff; 
+            display: inline-block; padding: 5px 15px; margin-bottom: 30px; 
+            background: rgba(0,0,0,0.8); box-shadow: 0 0 10px #00ffff;
         }
 
         .galeria-discos { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-            gap: 30px; 
-            max-width: 1100px; 
-            margin: 40px auto; 
-            padding: 20px;
+            gap: 30px; max-width: 1100px; margin: 40px auto; padding: 20px;
         }
 
         .disco { 
-            border: 4px solid #fff; 
-            transition: 0.4s; 
-            background: #111; 
-            position: relative;
-            overflow: hidden;
+            border: 4px solid #fff; transition: 0.4s; background: #111; 
+            overflow: hidden; position: relative;
         }
 
         .disco:hover { 
-            transform: scale(1.08) rotate(2deg); 
-            border-color: #ff00ff; 
-            box-shadow: 0 0 25px #ff00ff; 
-            z-index: 10; 
+            transform: scale(1.08) rotate(2deg); border-color: #ff00ff; 
+            box-shadow: 0 0 25px #ff00ff; z-index: 10; 
         }
 
-        .disco img { 
-            width: 100%; 
-            height: auto; 
-            display: block; 
-            filter: contrast(1.1);
-        }
+        .disco img { width: 100%; height: auto; display: block; }
 
         .disco-info { 
-            padding: 12px; 
-            font-size: 0.9rem; 
-            color: #fff; 
-            background: #000;
-            border-top: 2px solid #fff;
+            padding: 12px; font-size: 0.9rem; color: #fff; 
+            background: #000; border-top: 2px solid #fff;
         }
 
         .btn-instagram { 
-            display: inline-block; 
-            background: #ff00ff; 
-            color: white; 
-            padding: 15px 40px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            margin: 50px 0; 
-            box-shadow: 0 0 20px #ff00ff;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: 0.3s;
-        }
-
-        .btn-instagram:hover {
-            background: #00ffff;
-            box-shadow: 0 0 20px #00ffff;
-            color: #000;
+            display: inline-block; background: #ff00ff; color: white; 
+            padding: 15px 40px; text-decoration: none; font-weight: bold; 
+            margin: 50px 0; box-shadow: 0 0 20px #ff00ff; text-transform: uppercase;
         }
     </style>
 </head>
@@ -121,7 +86,14 @@
         <div class="disco">
             <img src="Charly.jpg" alt="Charly Garcia">
             <div class="disco-info">CHARLY GARCIA - CLICS MODERNOS</div>
-       
+        </div>
+
+        <div class="disco">
+            <img src="https://upload.wikimedia.org/wikipedia/en/b/b3/NadaPersonal.jpg" alt="Soda Stereo">
+            <div class="disco-info">SODA STEREO - NADA PERSONAL</div>
+        </div>
+
+        <div class="disco">
             <img src="Sumo.png" alt="Sumo">
             <div class="disco-info">SUMO - LLEGANDO LOS MONOS</div>
         </div>
@@ -136,7 +108,6 @@
             <div class="disco-info">SPINETTA JADE - BAJO BELGRANO</div>
         </div>
     </div>
-    <img src="https://upload.wikimedia.org/wikipedia/en/b/b3/NadaPersonal.jpg" alt="Soda Stereo">
 
     <a href="https://www.instagram.com/retrosintesis80s/" target="_blank" class="btn-instagram">
         Seguinos en Instagram
@@ -144,8 +115,6 @@
 
 </body>
 </html>
-
-
 
 
 
