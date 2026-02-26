@@ -5,16 +5,41 @@
     <meta charset="UTF-8">
     <title>@retrosintesis80s | Archivo Rock Nacional</title>
     <style>
-        body {
+       body {
             background-color: #050505;
             color: #00ffff;
             font-family: 'Courier New', Courier, monospace;
             text-align: center;
-            background-image: linear-gradient(0deg, transparent 24%, rgba(255, 0, 255, .05) 25%, rgba(255, 0, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, .05) 75%, rgba(255, 0, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 0, 255, .05) 25%, rgba(255, 0, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, .05) 75%, rgba(255, 0, 255, .05) 76%, transparent 77%, transparent);
-            background-size: 50px 50px;
             margin: 0;
             padding: 20px;
+            overflow-x: hidden;
+            
+            /* Efecto de cuadrícula en movimiento */
+            background-image: 
+                linear-gradient(0deg, transparent 24%, rgba(255, 0, 255, .15) 25%, rgba(255, 0, 255, .15) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, .15) 75%, rgba(255, 0, 255, .15) 76%, transparent 77%, transparent), 
+                linear-gradient(90deg, transparent 24%, rgba(255, 0, 255, .15) 25%, rgba(255, 0, 255, .15) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, .15) 75%, rgba(255, 0, 255, .15) 76%, transparent 77%, transparent);
+            background-size: 60px 60px;
+            animation: moveGrid 4s linear infinite;
         }
+
+        /* Animación para que el fondo se mueva */
+        @keyframes moveGrid {
+            from { background-position: 0 0; }
+            to { background-position: 0 60px; }
+        }
+
+        h1 { 
+            font-size: 3.5rem; 
+            color: #fff; 
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff; 
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; }
+        }
+           
 
         h1 {
             font-size: 3.5rem;
@@ -116,5 +141,6 @@
 
 </body>
 </html>
+
 
 
