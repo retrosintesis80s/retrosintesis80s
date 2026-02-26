@@ -2,48 +2,91 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Retrosíntesis 80s | Rock Nacional</title>
+    <title>@retrosintesis80s | Rock & Pop</title>
     <style>
         body {
             background-color: #050505;
-            color: #ff00ff;
+            color: #00ffff;
             font-family: 'Courier New', Courier, monospace;
             text-align: center;
-            background-image: linear-gradient(0deg, transparent 24%, rgba(32, 255, 255, .05) 25%, rgba(32, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(32, 255, 255, .05) 75%, rgba(32, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(32, 255, 255, .05) 25%, rgba(32, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(32, 255, 255, .05) 75%, rgba(32, 255, 255, .05) 76%, transparent 77%, transparent);
+            /* Fondo de cuadrícula retro */
+            background-image: linear-gradient(0deg, transparent 24%, rgba(255, 0, 255, .1) 25%, rgba(255, 0, 255, .1) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, .1) 75%, rgba(255, 0, 255, .1) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 0, 255, .1) 25%, rgba(255, 0, 255, .1) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, .1) 75%, rgba(255, 0, 255, .1) 76%, transparent 77%, transparent);
             background-size: 50px 50px;
+            margin: 0;
+            padding: 20px;
         }
 
         h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             color: #fff;
-            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff;
-            animation: parpadeo 2s infinite;
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+            margin-bottom: 10px;
         }
 
-        @keyframes parpadeo {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; text-shadow: 0 0 5px #00ffff; }
+        .user-tag {
+            font-size: 1.5rem;
+            color: #00ffff;
+            background: rgba(0, 0, 0, 0.8);
+            display: inline-block;
+            padding: 5px 15px;
+            border: 2px solid #00ffff;
+            box-shadow: 0 0 10px #00ffff;
+            margin-bottom: 20px;
         }
 
         .marquesina {
-            background: #ff00ff;
-            color: black;
+            background: #00ffff;
+            color: #000;
             font-weight: bold;
             padding: 10px;
+            margin: 20px 0;
+            text-transform: uppercase;
+        }
+
+        .btn-instagram {
+            display: inline-block;
+            background: #ff00ff;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 0 0 15px #ff00ff;
+            transition: 0.3s;
             margin-top: 20px;
+            text-transform: uppercase;
+        }
+
+        .btn-instagram:hover {
+            box-shadow: 0 0 30px #ff00ff;
+            transform: scale(1.1);
+        }
+
+        .video-container {
+            margin-top: 30px;
+            border: 5px solid #ff00ff;
+            display: inline-block;
+            line-height: 0;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
         }
     </style>
 </head>
 <body>
 
     <h1>RETROSÍNTESIS 80s</h1>
+    <div class="user-tag">@retrosintesis80s</div>
     
-    <marquee class="marquesina">BIENVENIDOS A LA ERA DEL VINILO - SODA STEREO - CHARLY GARCÍA - VIRUS - SUMO - LOS ABUELOS DE LA NADA</marquee>
+    <marquee class="marquesina"> ⚡ EL ARCHIVO DIGITAL DEL ROCK NACIONAL ⚡ SODA STEREO ⚡ CHARLY GARCIA ⚡ VIRUS ⚡ LOS ABUELOS DE LA NADA ⚡ SUMO ⚡ </marquee>
 
-    <div style="margin-top: 50px;">
-        <p>Subí el volumen, ponete las hombreras y disfrutá.</p>
+    <div class="video-container">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/EPrUuN2Yp0s?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
+
+    <br>
+
+    <a href="https://www.instagram.com/retrosintesis80s/" target="_blank" class="btn-instagram">
+        Seguinos en Instagram
+    </a>
 
 </body>
 </html>
