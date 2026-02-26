@@ -1,23 +1,139 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Retrosintesis Test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@retrosintesis80s | Archivo Rock Nacional</title>
     <style>
-        body { background: black; color: lime; font-family: monospace; text-align: center; padding-top: 100px; }
-        .boton { background: #ff00ff; color: white; padding: 20px; text-decoration: none; border-radius: 10px; display: inline-block; margin-top: 20px; }
+        body {
+            background-color: #050505;
+            color: #00ffff;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+            background-image: 
+                linear-gradient(0deg, transparent 24%, rgba(255, 0, 255, .15) 25%, rgba(255, 0, 255, .15) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, .15) 75%, rgba(255, 0, 255, .15) 76%, transparent 77%, transparent), 
+                linear-gradient(90deg, transparent 24%, rgba(255, 0, 255, .15) 25%, rgba(255, 0, 255, .15) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, .15) 75%, rgba(255, 0, 255, .15) 76%, transparent 77%, transparent);
+            background-size: 60px 60px;
+            animation: moveGrid 4s linear infinite;
+        }
+
+        @keyframes moveGrid { from { background-position: 0 0; } to { background-position: 0 60px; } }
+
+        h1 { 
+            font-size: 2.8rem; 
+            color: #fff; 
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; 
+            margin-bottom: 10px;
+        }
+
+        .frase-manifiesto {
+            font-size: 1rem;
+            color: #fff;
+            max-width: 600px;
+            margin: 0 auto 20px auto;
+            font-style: italic;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.4;
+        }
+
+        .user-tag { 
+            font-size: 1rem; color: #00ffff; border: 1px solid #00ffff; 
+            display: inline-block; padding: 5px 15px; margin-bottom: 25px; 
+            background: rgba(0,0,0,0.8); box-shadow: 0 0 10px #00ffff;
+        }
+
+        .spotify-container {
+            max-width: 600px;
+            margin: 20px auto;
+            border: 3px solid #ff00ff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 20px #ff00ff;
+        }
+
+        .galeria-discos { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 20px; max-width: 1000px; margin: 40px auto; padding: 10px;
+        }
+
+        .disco { 
+            border: 3px solid #fff; transition: 0.4s; background: #111; 
+            overflow: hidden;
+        }
+
+        .disco:hover { 
+            transform: scale(1.05); border-color: #ff00ff; 
+            box-shadow: 0 0 15px #ff00ff;
+        }
+
+        .disco img { width: 100%; height: auto; display: block; }
+
+        .disco-info { 
+            padding: 10px; font-size: 0.8rem; color: #fff; 
+            background: #000; border-top: 1px solid #fff;
+        }
+
+        .contenedor-botones { margin: 40px 0; }
+
+        .btn-redes { 
+            display: inline-block; 
+            color: white; 
+            padding: 12px 25px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            margin: 10px; 
+            text-transform: uppercase;
+            transition: 0.3s;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .btn-instagram { background: #ff00ff; box-shadow: 0 0 10px #ff00ff; }
+        .btn-tiktok { background: #000; border: 2px solid #00ffff; box-shadow: 0 0 10px #00ffff; color: #00ffff; }
+        
+        .btn-redes:hover { transform: scale(1.1); filter: brightness(1.2); }
     </style>
 </head>
 <body>
-    <h1>¡LA WEB ESTÁ VIVA!</h1>
-    <p>Si leés esto, GitHub ya actualizó.</p>
-    
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1W7P4oG4D36w1j0fVbE86n?utm_source=generator" width="300" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
-    <br>
-    <a href="https://www.instagram.com/retrosintesis80s/" class="boton">IR A INSTAGRAM</a>
+    <h1>RETROSÍNTESIS 80s</h1>
+    
+    <div class="frase-manifiesto">
+        ⚡️ El pulso eléctrico de una generación <br> 
+        📼 Canciones de una época que no fue moda, fue identidad
+    </div>
+
+    <div class="user-tag">@retrosintesis80s</div>
+
+    <div class="spotify-container">
+        <iframe style="border-radius:12px" 
+            src="https://open.spotify.com/embed/playlist/0Yp7K1mC19Yl2GndXqI57F?utm_source=generator&theme=0" 
+            width="100%" height="352" frameBorder="0" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+        </iframe>
+    </div>
+
+    <div class="galeria-discos">
+        <div class="disco"><img src="Charly.jpg"><div class="disco-info">CHARLY GARCÍA - CLICS MODERNOS</div></div>
+        <div class="disco"><img src="Sumo.png"><div class="disco-info">SUMO - LLEGANDO LOS MONOS</div></div>
+        <div class="disco"><img src="abuelos.jpg"><div class="disco-info">LOS ABUELOS - HIMNO DE MI CORAZÓN</div></div>
+        <div class="disco"><img src="spinetta.jpg"><div class="disco-info">SPINETTA JADE - BAJO BELGRANO</div></div>
+    </div>
+
+    <div class="contenedor-botones">
+        <a href="https://www.instagram.com/retrosintesis80s/" target="_blank" class="btn-redes btn-instagram">Instagram</a>
+        <a href="https://www.tiktok.com/@retrosintesis80s" target="_blank" class="btn-redes btn-tiktok">TikTok</a>
+    </div>
+
 </body>
 </html>
-
 
 
 
