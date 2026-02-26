@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,7 +15,6 @@
             margin: 0;
             padding: 20px;
             overflow-x: hidden;
-            /* Fondo de cuadrícula animada */
             background-image: 
                 linear-gradient(0deg, transparent 24%, rgba(255, 0, 255, .15) 25%, rgba(255, 0, 255, .15) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, .15) 75%, rgba(255, 0, 255, .15) 76%, transparent 77%, transparent), 
                 linear-gradient(90deg, transparent 24%, rgba(255, 0, 255, .15) 25%, rgba(255, 0, 255, .15) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, .15) 75%, rgba(255, 0, 255, .15) 76%, transparent 77%, transparent);
@@ -32,7 +32,7 @@
             color: #fff; 
             text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; 
             animation: pulse 2s ease-in-out infinite;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         @keyframes pulse {
@@ -41,15 +41,14 @@
         }
 
         .user-tag { 
-            font-size: 1.2rem; color: #00ffff; border: 1px solid #00ffff; 
-            display: inline-block; padding: 5px 15px; margin-bottom: 30px; 
+            font-size: 1.1rem; color: #00ffff; border: 1px solid #00ffff; 
+            display: inline-block; padding: 5px 15px; margin-bottom: 20px; 
             background: rgba(0,0,0,0.8); box-shadow: 0 0 10px #00ffff;
         }
 
-        /* Contenedor de tu lista de Spotify */
         .spotify-container {
             max-width: 700px;
-            margin: 20px auto 40px auto;
+            margin: 10px auto 30px auto;
             border: 3px solid #ff00ff;
             border-radius: 15px;
             overflow: hidden;
@@ -60,7 +59,7 @@
         .galeria-discos { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-            gap: 30px; max-width: 1100px; margin: 40px auto; padding: 20px;
+            gap: 30px; max-width: 1100px; margin: 30px auto; padding: 20px;
         }
 
         .disco { 
@@ -80,17 +79,40 @@
             background: #000; border-top: 2px solid #fff;
         }
 
-        .btn-instagram { 
-            display: inline-block; background: #ff00ff; color: white; 
-            padding: 15px 40px; text-decoration: none; font-weight: bold; 
-            margin: 50px 0; box-shadow: 0 0 20px #ff00ff; text-transform: uppercase;
-            transition: 0.3s;
+        /* Estilos de Botones */
+        .contenedor-botones {
+            margin: 40px 0 60px 0;
         }
 
-        .btn-instagram:hover {
-            background: #00ffff;
-            color: #000;
-            box-shadow: 0 0 20px #00ffff;
+        .btn-redes { 
+            display: inline-block; 
+            color: white; 
+            padding: 15px 30px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            margin: 10px; 
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .btn-instagram { 
+            background: #ff00ff; 
+            box-shadow: 0 0 15px #ff00ff; 
+        }
+
+        .btn-tiktok { 
+            background: #000; 
+            border: 2px solid #00ffff;
+            box-shadow: 0 0 15px #00ffff; 
+            color: #00ffff;
+        }
+
+        .btn-redes:hover {
+            transform: translateY(-5px);
+            filter: brightness(1.2);
         }
     </style>
 </head>
@@ -100,7 +122,7 @@
     <div class="user-tag">@retrosintesis80s</div>
 
     <div class="spotify-container">
-        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/51tQ8iYgerP5eFLgymxRTy?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1XW96S8S899A1C5W7D9F88" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
 
     <div class="galeria-discos">
@@ -123,11 +145,13 @@
             <img src="spinetta.jpg" alt="Luis Alberto Spinetta">
             <div class="disco-info">SPINETTA JADE - BAJO BELGRANO</div>
         </div>
-    <div style="margin-bottom: 50px;">
+    </div>
+
+    <div class="contenedor-botones">
         <a href="https://www.instagram.com/retrosintesis80s/" target="_blank" class="btn-redes btn-instagram">
             Instagram
         </a>
-        <a href="https://www.tiktok.com/@ retrosíntesis80starget="_blank" class="btn-redes btn-tiktok">
+        <a href="https://www.tiktok.com/@retrosintesis80s" target="_blank" class="btn-redes btn-tiktok">
             TikTok
         </a>
     </div>
