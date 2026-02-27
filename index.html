@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@retrosintesis80s | Archivo Rock Nacional</title>
     <style>
+        /* FONDO ESPACIAL (Warp Speed) */
         body {
-            background-color: #050505;
+            background-color: #000;
             color: #00ffff;
             font-family: 'Courier New', Courier, monospace;
             text-align: center;
@@ -15,19 +15,37 @@
             padding: 20px;
             overflow-x: hidden;
             background-image: 
-                linear-gradient(0deg, transparent 24%, rgba(255, 0, 255, .15) 25%, rgba(255, 0, 255, .15) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, .15) 75%, rgba(255, 0, 255, .15) 76%, transparent 77%, transparent), 
-                linear-gradient(90deg, transparent 24%, rgba(255, 0, 255, .15) 25%, rgba(255, 0, 255, .15) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, .15) 75%, rgba(255, 0, 255, .15) 76%, transparent 77%, transparent);
-            background-size: 60px 60px;
-            animation: moveGrid 4s linear infinite;
+                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px);
+            background-size: 550px 550px, 350px 350px, 250px 250px;
+            background-position: 0 0, 40px 60px, 130px 270px;
+            animation: warp 10s linear infinite;
         }
 
-        @keyframes moveGrid { from { background-position: 0 0; } to { background-position: 0 60px; } }
+        @keyframes warp {
+            from { background-position: 0 0, 40px 60px, 130px 270px; }
+            to { background-position: 550px 550px, 390px 410px, 380px 820px; }
+        }
 
-        h1 { 
-            font-size: 2.8rem; 
-            color: #fff; 
-            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; 
-            margin-bottom: 10px;
+        /* EFECTO VHS GLITCH EN EL TÍTULO */
+        .glitch {
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+            position: relative;
+            text-shadow: 0.05em 0 0 #ff00ff, -0.05em -0.025em 0 #00ffff;
+            animation: glitch 1s infinite;
+        }
+
+        @keyframes glitch {
+            0% { text-shadow: 0.05em 0 0 #ff00ff, -0.05em -0.025em 0 #00ffff; }
+            14% { text-shadow: 0.05em 0 0 #ff00ff, -0.05em -0.025em 0 #00ffff; }
+            15% { text-shadow: -0.05em -0.025em 0 #ff00ff, 0.025em 0.025em 0 #00ffff; }
+            49% { text-shadow: -0.05em -0.025em 0 #ff00ff, 0.025em 0.025em 0 #00ffff; }
+            50% { text-shadow: 0.025em 0.05em 0 #ff00ff, 0.05em 0 0 #00ffff; }
+            99% { text-shadow: 0.025em 0.05em 0 #ff00ff, 0.05em 0 0 #00ffff; }
+            100% { text-shadow: -0.025em 0 0 #ff00ff, -0.025em -0.025em 0 #00ffff; }
         }
 
         .frase-manifiesto {
@@ -38,7 +56,8 @@
             font-style: italic;
             text-transform: uppercase;
             letter-spacing: 1px;
-            line-height: 1.5;
+            background: rgba(0,0,0,0.6);
+            padding: 10px;
         }
 
         .user-tag { 
@@ -47,6 +66,7 @@
             background: rgba(0,0,0,0.8); box-shadow: 0 0 10px #00ffff;
         }
 
+        /* GALERÍA DE DISCOS */
         .galeria-discos { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
@@ -59,17 +79,40 @@
         }
 
         .disco:hover { 
-            transform: scale(1.05) rotate(1deg); border-color: #ff00ff; 
+            transform: scale(1.05); border-color: #ff00ff; 
             box-shadow: 0 0 15px #ff00ff;
         }
 
-        .disco img { width: 100%; height: auto; display: block; }
+        .disco img { width: 100%; height: auto; display: block; filter: saturate(1.2); }
 
         .disco-info { 
             padding: 12px; font-size: 0.85rem; color: #fff; 
             background: #000; border-top: 1px solid #fff;
         }
 
+        /* CONTADOR RETRO */
+        .contador-container {
+            margin: 40px auto;
+            background: #111;
+            border: 2px solid #333;
+            display: inline-block;
+            padding: 10px 20px;
+        }
+
+        .contador-label { font-size: 0.7rem; color: #666; text-transform: uppercase; margin-bottom: 5px; }
+
+        .contador-numeros {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.5rem;
+            color: #ff0000;
+            background: #220000;
+            padding: 5px 10px;
+            border-radius: 3px;
+            letter-spacing: 4px;
+            box-shadow: inset 0 0 5px #000;
+        }
+
+        /* BOTONES */
         .contenedor-botones { margin: 50px 0; }
 
         .btn-redes { 
@@ -94,7 +137,7 @@
 </head>
 <body>
 
-    <h1>RETROSÍNTESIS 80s</h1>
+    <h1 class="glitch">RETROSÍNTESIS 80s</h1>
     
     <div class="frase-manifiesto">
         ⚡️ El pulso eléctrico de una generación <br> 
@@ -110,6 +153,11 @@
         <div class="disco"><img src="spinetta.jpg"><div class="disco-info">SPINETTA JADE - BAJO BELGRANO</div></div>
     </div>
 
+    <div class="contador-container">
+        <div class="contador-label">Archivos Consultados</div>
+        <div class="contador-numeros">001984</div>
+    </div>
+
     <div class="contenedor-botones">
         <a href="https://www.instagram.com/retrosintesis80s/" target="_blank" class="btn-redes btn-instagram">Instagram</a>
         <a href="https://www.tiktok.com/@retrosintesis80s" target="_blank" class="btn-redes btn-tiktok">TikTok</a>
@@ -117,6 +165,8 @@
 
 </body>
 </html>
+
+
 
 
 
