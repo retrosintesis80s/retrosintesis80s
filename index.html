@@ -1,50 +1,30 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Retrosíntesis 80s</title>
     <style>
-        body { background: #050505; color: #00ffff; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-        .card { border: 3px solid #ff00ff; padding: 40px; border-radius: 20px; text-align: center; box-shadow: 0 0 20px #ff00ff; }
-        button { background: #ff00ff; color: white; border: none; padding: 15px 30px; font-size: 20px; font-weight: bold; border-radius: 50px; cursor: pointer; box-shadow: 0 0 15px #ff00ff; }
-        .status { margin-top: 20px; font-size: 14px; color: #39ff14; font-weight: bold; }
+        body { background: #000; color: #0ff; font-family: 'Courier New', monospace; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .box { border: 4px solid #ff00ff; padding: 40px; border-radius: 20px; box-shadow: 0 0 20px #ff00ff; text-align: center; }
+        .btn { background: #ff00ff; color: #fff; padding: 20px; border: none; border-radius: 50px; cursor: pointer; font-size: 20px; font-weight: bold; box-shadow: 0 0 15px #ff00ff; margin-top: 20px; }
     </style>
 </head>
 <body>
-
-    <div class="card">
+    <div class="box">
         <h1>RETROSÍNTESIS 80s</h1>
-        <p>RADIO EN VIVO</p>
+        <p>MONTEVIDEO, URUGUAY</p>
         
-        <button id="btn-play" onclick="toggleRadio()">REPRODUCIR</button>
+        <button class="btn" onclick="iniciarRadio()">ESCUCHAR EN VIVO</button>
         
-        <div id="status" class="status">ESPERANDO...</div>
+        <p id="msg" style="font-size: 12px; margin-top: 15px; color: #39ff14;"></p>
     </div>
 
     <script>
-        var player = new Audio();
-        // Esta es la URL que mejor funciona con Caster.fm
-        player.src = "http://sapircast.caster.fm:13972/;stream.mp3";
-
-        function toggleRadio() {
-            var btn = document.getElementById("btn-play");
-            var status = document.getElementById("status");
-
-            if (player.paused) {
-                player.play().then(() => {
-                    btn.innerText = "PAUSAR";
-                    status.innerText = "● AL AIRE";
-                }).catch(error => {
-                    alert("Haz clic en el candado de la barra de direcciones y permite 'Contenido no seguro' para escuchar.");
-                });
-            } else {
-                player.pause();
-                btn.innerText = "REPRODUCIR";
-                status.innerText = "PAUSADO";
-            }
+        function iniciarRadio() {
+            var audio = new Audio("https://shaincast.caster.fm:13972/listen.mp3?auth=1");
+            audio.play();
+            document.getElementById('msg').innerText = "CONECTANDO AL FLUJO...";
         }
     </script>
-
 </body>
 </html>
