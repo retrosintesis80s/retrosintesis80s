@@ -6,40 +6,47 @@
     <title>Retrosíntesis 80s</title>
     <style>
         body { background: #000; color: #0ff; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-        .radio-card { border: 4px solid #ff00ff; padding: 50px; border-radius: 30px; text-align: center; box-shadow: 0 0 25px #ff00ff; }
-        button { background: #ff00ff; color: #fff; padding: 20px 40px; border: none; border-radius: 50px; cursor: pointer; font-size: 22px; font-weight: bold; box-shadow: 0 0 15px #ff00ff; }
-        button:hover { transform: scale(1.05); background: #00ffff; color: #000; }
-        .live { color: #39ff14; font-weight: bold; margin-top: 20px; text-transform: uppercase; letter-spacing: 2px; }
+        .radio-card { border: 4px solid #ff00ff; padding: 40px; border-radius: 20px; text-align: center; box-shadow: 0 0 20px #ff00ff; }
+        .btn { background: #ff00ff; color: #fff; padding: 20px 40px; border: none; border-radius: 50px; cursor: pointer; font-size: 20px; font-weight: bold; box-shadow: 0 0 15px #ff00ff; }
+        .status { margin-top: 20px; color: #39ff14; font-family: monospace; }
     </style>
 </head>
 <body>
 
     <div class="radio-card">
         <h1>RETROSÍNTESIS 80s</h1>
-        <p>TRANSMITIENDO DESDE MONTEVIDEO</p>
+        <p>MONTEVIDEO - URUGUAY</p>
         
-        <button onclick="tocar()">REPRODUCIR RADIO</button>
+        <button class="btn" id="playBtn">SINTONIZAR RADIO</button>
         
-        <div id="status" class="live">SISTEMA LISTO</div>
+        <div id="status" class="status">SISTEMA EN ESPERA</div>
     </div>
 
     <script>
-        // Usamos una URL que fuerza el flujo sin que el navegador lo corte
-        var streamUrl = "http://shaincast.caster.fm:13972/listen.mp3?nocache=" + Math.random();
-        var audio = new Audio(streamUrl);
+        const btn = document.getElementById('playBtn');
+        const st = document.getElementById('status');
+        let audio;
 
-        function tocar() {
-            var s = document.getElementById("status");
-            s.innerText = "CONECTANDO...";
+        btn.addEventListener('click', function() {
+            st.innerText = "CONECTANDO...";
             
+            // Creamos el audio recién cuando el usuario hace clic (truco para permisos)
+            if (!audio) {
+                audio = new Audio("http://shaincast.caster.fm:13972/listen.mp3?nocache=" + Date.now());
+            }
+
             audio.play().then(() => {
-                s.innerText = "● AL AIRE";
+                st.innerText = "● TRANSMITIENDO EN VIVO";
+                btn.innerText = "PAUSAR";
             }).catch(err => {
-                s.innerText = "ERROR DE PERMISO";
-                console.log(err);
-                alert("Atención: Haz clic en el candado/triángulo 'No seguro' y activa 'Contenido no seguro'. Luego reinicia la página.");
+                st.innerText = "ERROR DE SEGURIDAD";
+                console.error(err);
+                // Si falla, intentamos abrirlo en una ventana nueva como plan de rescate
+                if(confirm("El navegador bloquea el audio. ¿Quieres abrir la radio en una pestaña directa?")) {
+                    window.open("http://shaincast.caster.fm:13972/listen.mp3", "_blank");
+                }
             });
-        }
+        });
     </script>
 
 </body>
