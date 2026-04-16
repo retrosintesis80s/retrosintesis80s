@@ -1,91 +1,29 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retrosíntesis 80s | En Vivo</title>
+    <title>Retrosíntesis 80s</title>
     <style>
-        body {
-            background-color: #050505;
-            color: white;
-            font-family: 'Courier New', Courier, monospace;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-
-        .radio-card {
-            background: #121212;
-            border: 3px solid #00ffff;
-            padding: 30px;
-            border-radius: 25px;
-            box-shadow: 0 0 20px #00ffff, inset 0 0 10px #ff00ff;
-            width: 320px;
-        }
-
-        h1 {
-            color: #ff00ff;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 2px 2px #000, 0 0 15px #ff00ff;
-            margin: 0 0 10px 0;
-        }
-
-        .status {
-            background: #000;
-            padding: 5px 15px;
-            border-radius: 20px;
-            border: 1px solid #39ff14;
-            color: #39ff14;
-            font-size: 12px;
-            display: inline-block;
-            margin-bottom: 20px;
-            animation: pulse 2s infinite;
-        }
-
-        audio {
-            width: 100%;
-            margin-top: 10px;
-            filter: invert(100%) hue-rotate(180deg) brightness(1.2);
-        }
-
-        .location {
-            margin-top: 25px;
-            font-size: 11px;
-            color: #666;
-            letter-spacing: 1px;
-        }
-
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
-        }
+        body { background: #050505; color: white; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .radio-box { border: 3px solid #00ffff; padding: 30px; border-radius: 20px; text-align: center; box-shadow: 0 0 20px #00ffff; }
+        h1 { color: #ff00ff; text-shadow: 0 0 10px #ff00ff; margin: 0 0 20px 0; }
+        audio { width: 100%; filter: invert(100%); }
     </style>
 </head>
 <body>
-
-    <div class="radio-card">
-        <h1>RETROSÍNTESIS</h1>
-        <p style="color: #00ffff; font-size: 13px; margin-top: 0;">ROCK & POP DE LOS 80</p>
+    <div class="radio-box">
+        <h1>RETROSÍNTESIS 80s</h1>
+        <p>TRANSMITIENDO EN VIVO</p>
         
-        <div class="status">● TRANSMITIENDO EN VIVO</div>
-
         <audio controls>
-            <source src="http://sapircast.caster.fm:13972/;stream.mp3" type="audio/mpeg">
+            <source src="https://shaincast.caster.fm:13972/listen.mp3" type="audio/mpeg">
             Tu navegador no soporta el audio.
         </audio>
-
-        <div class="location">
-            MONTEVIDEO, URUGUAY
-        </div>
+        
+        <p style="font-size: 10px; color: #444; margin-top: 20px;">MONTEVIDEO - URUGUAY</p>
     </div>
-
 </body>
 </html>
-
-
