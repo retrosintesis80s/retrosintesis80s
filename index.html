@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,62 +9,52 @@
         body {
             background-color: #121212;
             color: white;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
+            height: 100vh;
             margin: 0;
             text-align: center;
         }
-        .container {
-            max-width: 600px;
-            padding: 20px;
+        .card {
+            background: #1e1e1e;
+            padding: 40px;
+            border-radius: 20px;
             border: 2px solid #e81e4d;
-            border-radius: 15px;
-            background-color: #1e1e1e;
-            box-shadow: 0 0 20px rgba(232, 30, 77, 0.3);
+            box-shadow: 0 0 30px rgba(232, 30, 77, 0.4);
+            max-width: 400px;
         }
-        h1 {
-            color: #e81e4d;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        h1 { color: #e81e4d; text-transform: uppercase; letter-spacing: 3px; }
+        .btn-radio {
+            background: #e81e4d;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(232, 30, 77, 0.5);
         }
-        p {
-            color: #ccc;
-            margin-bottom: 30px;
-        }
-        .footer-text {
-            margin-top: 20px;
-            font-size: 0.8em;
-            color: #666;
-        }
-        /* Estilo para asegurar que el widget se vea bien */
-        .cstrEmbed {
-            margin: 0 auto;
-            min-height: 120px;
-        }
+        .btn-radio:hover { background: #ff2e63; transform: scale(1.05); }
+        .status { margin-top: 20px; color: #888; font-size: 14px; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Retrosíntesis 80s</h1>
-        <p>Lo mejor del rock y pop de los 80 en alta fidelidad.</p>
+    <div class="card">
+        <h1>RETROSÍNTESIS 80s</h1>
+        <p>Rock & Pop Argentino en FLAC</p>
+        
+        <a href="javascript:void(0);" onclick="window.open('http://sapircast.caster.fm:13972/Exdw2', 'Radio', 'width=300,height=100');" class="btn-radio">
+            ▶ REPRODUCIR RADIO
+        </a>
 
-        <div data-type="newStreamPlayer" 
-             data-publicToken="4a2343c6-b4c2-4f23-8998-59518bcce1cd" 
-             data-theme="dark" 
-             data-color="e81e4d" 
-             class="cstrEmbed">
-             <a href="https://www.caster.fm">Radio Server Hosting</a>
-        </div>
-        <script src="https://cdn.cloud.caster.fm/widgets/embed.js"></script>
-        <div class="footer-text">
-            Si no escuchas nada, asegúrate de que el reproductor no esté silenciado y que estemos al aire.
-        </div>
+        <p class="status">Click para abrir el reproductor oficial y saltar el bloqueo de seguridad.</p>
     </div>
 
 </body>
