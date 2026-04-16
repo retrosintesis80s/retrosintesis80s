@@ -1,3 +1,5 @@
+
+   
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,31 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retrosíntesis 80s</title>
     <style>
-        body { background-color: #000; color: #fff; font-family: sans-serif; text-align: center; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-        .card { border: 2px solid #e81e4d; padding: 30px; border-radius: 20px; background: #111; box-shadow: 0 0 20px #e81e4d55; width: 90%; max-width: 400px; }
-        h1 { color: #e81e4d; font-size: 24px; text-transform: uppercase; }
-        .btn { background: #e81e4d; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; display: inline-block; font-weight: bold; margin-top: 20px; border: none; cursor: pointer; width: 100%; }
-        .footer { margin-top: 20px; font-size: 12px; color: #666; }
+        body { background-color: #050505; color: #fff; font-family: 'Courier New', Courier, monospace; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .box { border: 3px double #e81e4d; padding: 30px; border-radius: 5px; background: #111; text-align: center; max-width: 350px; }
+        h1 { color: #e81e4d; font-size: 22px; text-transform: uppercase; margin-bottom: 20px; text-shadow: 2px 2px #330000; }
+        .status-on { color: #00ff00; font-size: 12px; margin-bottom: 20px; animation: blink 1.5s infinite; }
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+        .btn-play { background: #e81e4d; color: white; padding: 20px; border-radius: 5px; text-decoration: none; display: block; font-weight: bold; border: none; cursor: pointer; font-size: 16px; }
+        .btn-play:hover { background: #fff; color: #e81e4d; }
+        .note { margin-top: 25px; font-size: 11px; color: #555; line-height: 1.4; }
     </style>
 </head>
 <body>
 
-<div class="card">
+<div class="box">
     <h1>RETROSÍNTESIS 80s</h1>
-    <p>Sonando: <b>Virus - Palo Borracho</b> 🎸</p>
-
-    <audio controls style="width: 100%; margin-top: 10px;">
-        <source src="http://sapircast.caster.fm:13972/Exdw2" type="audio/mpeg">
-        Tu navegador no soporta el audio.
-    </audio>
-
-    <a href="http://sapircast.caster.fm:13972/Exdw2" target="_blank" class="btn">
-        ABRIR EN OTRA PESTAÑA
+    <div class="status-on">● TRANSMITIENDO EN VIVO</div>
+    
+    <a href="http://sapircast.caster.fm:13972/Exdw2" target="_blank" class="btn-play">
+        SINTONIZAR RADIO 📻
     </a>
 
-    <div class="footer">
-        Si el reproductor no carga, usa el botón rojo.<br>
-        (Recuerda aceptar el sitio como "no seguro" en el móvil).
+    <div class="note">
+        Si el navegador pide confirmación, dale a <b>"Opciones avanzadas"</b> y luego a <b>"Acceder a sitio no seguro"</b>. Es necesario para habilitar el audio gratuito.
     </div>
 </div>
 
