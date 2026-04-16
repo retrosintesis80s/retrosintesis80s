@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,56 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retrosíntesis 80s - Radio Online</title>
     <style>
-        body {
-            background-color: #121212;
-            color: white;
-            font-family: 'Arial', sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-        .card {
-            background: #1e1e1e;
-            padding: 40px;
-            border-radius: 20px;
-            border: 2px solid #e81e4d;
-            box-shadow: 0 0 30px rgba(232, 30, 77, 0.4);
-            max-width: 400px;
-        }
-        h1 { color: #e81e4d; text-transform: uppercase; letter-spacing: 3px; }
-        .btn-radio {
-            background: #e81e4d;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 50px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(232, 30, 77, 0.5);
-        }
-        .btn-radio:hover { background: #ff2e63; transform: scale(1.05); }
-        .status { margin-top: 20px; color: #888; font-size: 14px; }
+        body { background-color: #000; color: #fff; font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .card { background: #111; padding: 40px; border-radius: 20px; border: 2px solid #e81e4d; text-align: center; box-shadow: 0 0 30px #e81e4d55; }
+        h1 { color: #e81e4d; letter-spacing: 2px; }
+        .btn { background: #e81e4d; color: #fff; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; border: none; cursor: pointer; }
+        .btn:hover { background: #ff2e63; transform: scale(1.05); }
+        .info { margin-top: 20px; color: #666; font-size: 13px; }
     </style>
 </head>
 <body>
 
     <div class="card">
         <h1>RETROSÍNTESIS 80s</h1>
-        <p>Rock & Pop Argentino en FLAC</p>
+        <p>Rock & Pop Argentino en Alta Fidelidad</p>
         
-        <a href="javascript:void(0);" onclick="window.open('http://sapircast.caster.fm:13972/Exdw2', 'Radio', 'width=300,height=100');" class="btn-radio">
-            ▶ REPRODUCIR RADIO
-        </a>
+        <audio id="player" style="margin: 20px 0;">
+            <source src="https://shoutcast-ssl-proxy.herokuapp.com/http://sapircast.caster.fm:13972/Exdw2" type="audio/mpeg">
+        </audio>
 
-        <p class="status">Click para abrir el reproductor oficial y saltar el bloqueo de seguridad.</p>
+        <button class="btn" onclick="togglePlay()" id="playBtn">▶ ESCUCHAR AHORA</button>
+
+        <p class="info">Si el botón no inicia, dale "Cargar de todos modos" o abre el link directo.</p>
     </div>
 
+    <script>
+        var player = document.getElementById('player');
+        var btn = document.getElementById('playBtn');
+
+        function togglePlay() {
+            if (player.paused) {
+                player.play();
+                btn.innerHTML = "⏸ PAUSAR RADIO";
+            } else {
+                player.pause();
+                btn.innerHTML = "▶ ESCUCHAR AHORA";
+            }
+        }
+    </script>
 </body>
 </html>
