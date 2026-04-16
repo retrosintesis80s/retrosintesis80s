@@ -1,29 +1,47 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Retrosíntesis 80s</title>
     <style>
-        body { background: #000; color: #0ff; font-family: sans-serif; text-align: center; padding-top: 50px; }
-        .box { border: 2px solid #f0f; display: inline-block; padding: 20px; border-radius: 15px; box-shadow: 0 0 15px #f0f; }
-        audio { margin-top: 20px; filter: invert(100%); }
+        body { background: #000; color: #0ff; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .card { border: 5px solid #ff00ff; padding: 50px; border-radius: 30px; text-align: center; box-shadow: 0 0 30px #ff00ff; }
+        .btn-play { background: #ff00ff; color: #fff; padding: 25px 50px; border: none; border-radius: 60px; cursor: pointer; font-size: 24px; font-weight: bold; box-shadow: 0 0 20px #ff00ff; text-transform: uppercase; }
+        .btn-play:hover { background: #00ffff; color: #000; box-shadow: 0 0 20px #00ffff; }
+        #status { margin-top: 25px; color: #39ff14; font-family: monospace; font-size: 18px; }
     </style>
 </head>
 <body>
-    <div class="box">
+
+    <div class="card">
         <h1>RETROSÍNTESIS 80s</h1>
-        <p>MONTEVIDEO - EN VIVO</p>
+        <p>RADIO EN VIVO - URUGUAY</p>
         
-        <audio controls autoplay>
-            <source src="http://shaincast.caster.fm:13972/listen.mp3" type="audio/mpeg">
-            Tu navegador no soporta el audio.
-        </audio>
+        <button class="btn-play" id="btn">ENCENDER RADIO</button>
         
-        <p style="font-size: 12px; color: #ccc; margin-top: 20px;">
-            Si no escuchas, haz clic en el candado de la barra de direcciones<br>
-            y selecciona "Configuración de sitios" -> "Contenido no seguro" -> "Permitir".
-        </p>
+        <div id="status">SISTEMA LISTO</div>
     </div>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', function() {
+            const status = document.getElementById('status');
+            status.innerText = "CONECTANDO...";
+
+            // Usamos una ventana emergente si el audio falla
+            const audioUrl = "http://shaincast.caster.fm:13972/listen.mp3";
+            const audio = new Audio(audioUrl);
+
+            audio.play().then(() => {
+                status.innerText = "● TRANSMITIENDO EN VIVO";
+            }).catch(err => {
+                status.innerText = "BLOQUEO DE NAVEGADOR";
+                // PLAN B: Si el navegador bloquea, abrimos el stream directo
+                if (confirm("El navegador bloquea el audio por seguridad. ¿Abrir el reproductor directo?")) {
+                    window.open(audioUrl, "_blank");
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
