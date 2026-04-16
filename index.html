@@ -1,41 +1,43 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Retrosíntesis 80s</title>
     <style>
-        body { background: #050505; color: #00ffff; font-family: 'Courier New', monospace; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-        .card { border: 3px solid #ff00ff; padding: 40px; border-radius: 20px; text-align: center; box-shadow: 0 0 20px #ff00ff; }
-        .btn-radio { background: #ff00ff; color: white; border: none; padding: 20px 40px; font-size: 22px; font-weight: bold; border-radius: 50px; cursor: pointer; box-shadow: 0 0 15px #ff00ff; text-transform: uppercase; }
-        .btn-radio:active { transform: scale(0.95); }
-        .status { margin-top: 25px; font-size: 14px; color: #39ff14; letter-spacing: 2px; }
+        body { background: #000; color: #0ff; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .radio-card { border: 4px solid #ff00ff; padding: 50px; border-radius: 30px; text-align: center; box-shadow: 0 0 25px #ff00ff; }
+        button { background: #ff00ff; color: #fff; padding: 20px 40px; border: none; border-radius: 50px; cursor: pointer; font-size: 22px; font-weight: bold; box-shadow: 0 0 15px #ff00ff; }
+        button:hover { transform: scale(1.05); background: #00ffff; color: #000; }
+        .live { color: #39ff14; font-weight: bold; margin-top: 20px; text-transform: uppercase; letter-spacing: 2px; }
     </style>
 </head>
 <body>
 
-    <div class="card">
+    <div class="radio-card">
         <h1>RETROSÍNTESIS 80s</h1>
-        <p style="color: #fff; margin-bottom: 30px;">URUGUAY AL MUNDO</p>
+        <p>TRANSMITIENDO DESDE MONTEVIDEO</p>
         
-        <button class="btn-radio" onclick="reproducir()">Escuchar Ahora</button>
+        <button onclick="tocar()">REPRODUCIR RADIO</button>
         
-        <div id="status-text" class="status">SISTEMA LISTO</div>
+        <div id="status" class="live">SISTEMA LISTO</div>
     </div>
 
     <script>
-        function reproducir() {
-            var st = document.getElementById("status-text");
-            st.innerText = "CONECTANDO AL FLUJO...";
+        // Usamos una URL que fuerza el flujo sin que el navegador lo corte
+        var streamUrl = "http://shaincast.caster.fm:13972/listen.mp3?nocache=" + Math.random();
+        var audio = new Audio(streamUrl);
 
-            // Intentamos con el formato de stream directo que menos bloquean
-            var audio = new Audio("http://shaincast.caster.fm:13972/listen.mp3?type=.mp3");
+        function tocar() {
+            var s = document.getElementById("status");
+            s.innerText = "CONECTANDO...";
             
             audio.play().then(() => {
-                st.innerText = "● TRANSMITIENDO EN VIVO";
-            }).catch(e => {
-                st.innerText = "ERROR: PERMISO DENEGADO";
-                console.log(e);
-                alert("Para escuchar: Haz clic en el 'No seguro' arriba y permite 'Contenido no seguro'.");
+                s.innerText = "● AL AIRE";
+            }).catch(err => {
+                s.innerText = "ERROR DE PERMISO";
+                console.log(err);
+                alert("Atención: Haz clic en el candado/triángulo 'No seguro' y activa 'Contenido no seguro'. Luego reinicia la página.");
             });
         }
     </script>
