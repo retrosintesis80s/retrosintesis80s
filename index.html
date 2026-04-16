@@ -1,148 +1,106 @@
 
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RETROSÍNTESIS 80s | RADIO ONLINE</title>
+    <title>Retrosíntesis 80s | Radio Online</title>
     <style>
-        /* FONDO ESPACIAL WARP */
         body {
-            background-color: #000;
-            color: #fff;
-            font-family: 'Courier New', monospace;
-            text-align: center;
+            background-color: #050505;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
             margin: 0;
-            padding: 20px;
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
-                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px);
-            background-size: 550px 550px, 350px 350px;
-            animation: warp 15s linear infinite;
+            overflow: hidden;
         }
 
-        @keyframes warp {
-            from { background-position: 0 0, 40px 60px; }
-            to { background-position: 550px 550px, 390px 410px; }
+        /* Contenedor Principal */
+        .contenedor-radio {
+            background: #121212;
+            border: 4px solid #00ffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 30px #00ffff, inset 0 0 15px #ff00ff;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
         }
 
-        /* CARTEL ON AIR PARPADEANTE */
-        .on-air {
-            background: #220000;
-            color: #ff0000;
-            border: 2px solid #ff0000;
-            display: inline-block;
-            padding: 5px 15px;
-            font-weight: bold;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-            box-shadow: 0 0 10px #ff0000;
-            animation: blink 1.5s step-end infinite;
-        }
-
-        @keyframes blink {
-            50% { background: #ff0000; color: #fff; box-shadow: 0 0 20px #ff0000; }
-        }
-
-        /* TÍTULO GLITCH */
-        .glitch {
-            font-size: 3rem;
-            color: #00ffff;
-            text-shadow: 2px 2px #ff00ff;
-            margin: 10px 0;
-        }
-
-        /* DIAL DE RADIO */
-        .radio-dial {
-            max-width: 500px;
-            margin: 30px auto;
-            background: #111;
-            border: 3px solid #333;
-            padding: 20px;
-            border-radius: 10px;
-            position: relative;
-        }
-
-        .dial-line {
-            height: 40px;
-            background: linear-gradient(90deg, #333 1px, transparent 1px);
-            background-size: 20px 100%;
-            border-bottom: 2px solid #00ffff;
-            position: relative;
-        }
-
-        .needle {
-            width: 4px;
-            height: 50px;
-            background: #ff0000;
-            position: absolute;
-            left: 60%; /* Ajusta esto para mover la aguja */
-            top: -5px;
-            box-shadow: 0 0 10px #ff0000;
-            animation: moveNeedle 5s ease-in-out infinite alternate;
-        }
-
-        @keyframes moveNeedle {
-            from { left: 40%; } to { left: 80%; }
-        }
-
-        /* REPRODUCTOR SIMULADO */
-        .player-status {
-            color: #00ff00;
-            font-size: 1.2rem;
-            margin: 15px 0;
+        h1 {
+            color: #ff00ff;
             text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 3px 3px #000, 0 0 10px #ff00ff;
+            margin-bottom: 5px;
         }
 
-        /* DISCOS */
-        .galeria-discos { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
-            gap: 20px; max-width: 900px; margin: 40px auto;
+        .subtitulo {
+            color: #00ffff;
+            font-size: 14px;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
         }
 
-        .disco { border: 2px solid #fff; background: #000; transition: 0.3s; }
-        .disco:hover { border-color: #00ffff; transform: scale(1.05); }
-        .disco img { width: 100%; display: block; filter: grayscale(50%); }
-        .disco:hover img { filter: grayscale(0%); }
-
-        .btn-redes { 
-            display: inline-block; padding: 15px 30px; color: white; 
-            text-decoration: none; font-weight: bold; margin: 10px; 
-            border-radius: 5px; text-transform: uppercase;
+        .estado-vivo {
+            background: #000;
+            padding: 8px 15px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 25px;
+            border: 1px solid #39ff14;
         }
-        .btn-inst { background: #ff00ff; box-shadow: 0 0 10px #ff00ff; }
-        .btn-tik { border: 2px solid #00ffff; color: #00ffff; }
 
+        .punto-rojo {
+            color: #39ff14;
+            font-weight: bold;
+            animation: parpadeo 1.5s infinite;
+        }
+
+        /* Estilo del Reproductor */
+        audio {
+            width: 100%;
+            filter: invert(100%) hue-rotate(180deg) brightness(1.5);
+            margin-top: 10px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        @keyframes parpadeo {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="on-air">LIVE: RADIO 80s</div>
-    
-    <h1 class="glitch">RETROSÍNTESIS FM</h1>
-    
-    <div class="radio-dial">
-        <div class="dial-line">
-            <div class="needle"></div>
+    <div class="contenedor-radio">
+        <h1>RETROSÍNTESIS</h1>
+        <div class="subtitulo">ROCK & POP DE LOS 80s</div>
+
+        <div class="estado-vivo">
+            <span class="punto-rojo">● EN VIVO</span>
         </div>
-        <p style="font-size: 0.8rem; letter-spacing: 5px; margin-top: 10px;">88 . 92 . 96 . 100 . 104 . 108</p>
-    </div>
 
-    <div class="player-status">>> SINTONIZANDO ROCK NACIONAL...</div>
+        <audio controls autoplay>
+            <source src="http://sapircast.caster.fm:13972/Exdw2" type="audio/mpeg">
+            Tu navegador no soporta el audio.
+        </audio>
 
-    <div class="galeria-discos">
-        <div class="disco"><img src="Charly.jpg"></div>
-        <div class="disco"><img src="Sumo.png"></div>
-        <div class="disco"><img src="abuelos.jpg"></div>
-        <div class="disco"><img src="spinetta.jpg"></div>
-    </div>
-
-    <div style="margin: 50px 0;">
-        <a href="https://www.instagram.com/retrosintesis80s/" class="btn-redes btn-inst">Instagram</a>
-        <a href="https://www.tiktok.com/@retrosintesis80s" class="btn-redes btn-tik">TikTok</a>
+        <div class="footer">
+            EMITIENDO DESDE MONTEVIDEO, URUGUAY<br>
+            SONIDO DIGITAL DE ALTA FIDELIDAD
+        </div>
     </div>
 
 </body>
